@@ -31,14 +31,20 @@ Installation
 
 ```bash
 npm install random-benchmark
+cd node_modules/random-benchmark
+npm install
 ```
 
 Usage
 -----
 
 ```bash
-random-benchmark
+npm test
 ```
+
+If you're developing your own RNG you may symlink the package into
+`random-benchmark/node_modules/` and write a wrapper so you can test it against
+the suite.
 
 Development
 -----------
