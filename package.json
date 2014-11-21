@@ -6,7 +6,8 @@
   "bin": "./index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "node index.js"
+    "test": "node index.js",
+    "prepublish": "npm ls && npm test"
   },
   "keywords": [
     "random",
