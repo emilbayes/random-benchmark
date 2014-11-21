@@ -1,0 +1,17 @@
+{
+  "name": "random-benchmark",
+  "version": "1.0.0",
+  "description": "Benchmark of pseudorandom number generators",
+  "main": "index.js",
+  "keywords": [
+    "random",
+    "pseudorandom",
+    "benchmark"
+  ],
+  "author": "Emil Bay <github@tixz.dk>",
+  "license": "ISC",
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
