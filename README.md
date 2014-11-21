@@ -1,4 +1,4 @@
-Random Benchmark
+Random Benchmark [![Build Status](https://travis-ci.org/emilbayes/random-benchmark.svg)](https://travis-ci.org/emilbayes/random-benchmark)
 ================
 
 This is not a random benchmark! ... or is it?
