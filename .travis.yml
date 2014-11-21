@@ -1,3 +1,11 @@
 language: node_js
 node_js:
 - '0.10'
+deploy:
+  provider: npm
+  email: github@tixz.dk
+  api_key:
+    secure: oIDMibfFDj2EbqnC550msbE4gZzqTF/o2l7jn4X9XySaGdZtGp9ZlUIWjMin1ZqH+c8cjEpQghrakJUttAMO2ieR+WFsVPanKZXK4L5jUQ98oyFh2WDiegH4iNQp2i5f09wMs3RFmN/9JJm5UC+P8ON6h9F4jRN0IPTJBbYMmKE=
+  on:
+    tags: true
+    repo: emilbayes/random-benchmark
