@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "Benchmark of pseudorandom number generators",
   "main": "index.js",
+  "bin": "./index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node index.js"
+  },
   "keywords": [
     "random",
     "pseudorandom",
