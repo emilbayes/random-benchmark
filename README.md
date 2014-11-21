@@ -26,6 +26,20 @@ the mean and standard deviation with the number of iterations, to get a measure
 for the performance of a single operation, even though this may be misleading
 because all the operations of a single package are batched.
 
+Installation
+------------
+
+```bash
+npm install random-benchmark
+```
+
+Usage
+-----
+
+```bash
+random-benchmark
+```
+
 License
 -------
 [ISC © 2014, Emil Bay <github@tixz.dk>](LICENSE)
