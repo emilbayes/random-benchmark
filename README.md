@@ -40,6 +40,27 @@ Usage
 random-benchmark
 ```
 
+Development
+-----------
+
+The benchmark is strongly inspired by
+[htmlparser-benchmark](https://github.com/AndreasMadsen/htmlparser-benchmark)
+and [levinstein-benchmark](https://github.com/AndreasMadsen/levenshtein-benchmark).
+It is composed of four layers:
+
+* `index.js` is the general CLI interface. The available wrappers are loaded here
+  and spawned as workers.
+* `worker.js` is responsible for taking a given wrapper and turning it into a benchmark
+  as well as monitoring progress.
+* `benchmark.js` is the abstract "class", where the nitty-gritty details of running
+  each wrapper is implemented, as well as calculating statistics using
+  [`summary`](https://github.com/AndreasMadsen/summary).
+* `wrapper/*.js` is a file for each benchmark to run in the suite. A wrapper follows
+  the signature `fn(iterations, callback)`, where `callback` is a standard Node.js
+  style callback. `iterations` is how many times the operation should be repeated
+  for the current sample. `Benchmark` will repeat this several times to calculate
+  a sample mean.
+
 License
 -------
 [ISC © 2014, Emil Bay <github@tixz.dk>](LICENSE)
