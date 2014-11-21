@@ -2,6 +2,9 @@ Random Benchmark
 ================
 
 This is not a random benchmark! ... or is it?
+The suite was developed to track the performance progress of `xorshift`, which
+[@AndreasMadsen](https://github.com/AndreasMadsen) and I co-developed during a
+Node.js hackathon in Copenhagen.
 
 Suite
 -----
