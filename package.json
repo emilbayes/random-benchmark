@@ -13,5 +13,9 @@
   "dependencies": {
   },
   "devDependencies": {
+    "mersenne": "latest",
+    "mt19937": "latest",
+    "uupaa.random.js": "latest",
+    "xorshift": "latest"
   }
 }
