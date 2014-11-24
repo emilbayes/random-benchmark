@@ -2,13 +2,12 @@
 var xorshift = require('xorshift');
 
 module.exports = function(iters, cb) {
-   try {
-      while(iters--) {
-         xorshift.random(); //2^53
-      }
+   var sum = 0;
+   while(iters--) {
+      sum += xorshift.random(); //2^53
    }
-   catch(e) {
-      return cb(e);
+   if(sum < 0 || sum > iters) {
+      return cb(new Error('bad sum'));
    }
 
    return cb(null);

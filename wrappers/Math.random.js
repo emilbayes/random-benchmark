@@ -1,12 +1,12 @@
 'use strict';
 module.exports = function(iters, cb) {
-   try {
-      while(iters--) {
-         Math.random();
-      }
+   var sum = 0;
+   while(iters--) {
+      sum += Math.random();
    }
-   catch(e) {
-      return cb(e);
+
+   if (sum < 0 || sum > iters) {
+      return cb(new Error('bad sum'));
    }
 
    return cb(null);

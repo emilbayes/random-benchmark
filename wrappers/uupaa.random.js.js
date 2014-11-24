@@ -4,13 +4,12 @@ var Random = require('uupaa.random.js');
 var r = new Random(1);
 
 module.exports = function(iters, cb) {
-   try {
-      while(iters--) {
-         r.value(); //2^53
-      }
+   var sum = 0;
+   while(iters--) {
+      sum += r.value(); //2^53
    }
-   catch(e) {
-      return cb(e);
+   if(sum < 0 || sum > iters) {
+      return cb(new Error('bad sum'));
    }
 
    return cb(null);
