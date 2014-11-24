@@ -1,7 +1,8 @@
 'use strict';
 module.exports = function(iters, cb) {
-   var sum = 0;
-   while(iters--) {
+   var sum = 0,
+       n = iters;
+   while(--n) {
       sum += Math.random();
    }
 
