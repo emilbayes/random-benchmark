@@ -12,6 +12,7 @@ Suite
 The benchmark includes the following npm packages:
 
 * `Math.random()`
+* [`alea`](https://www.npmjs.org/package/alea)
 * [`mersenne`](https://www.npmjs.org/package/mersenne)
 * [`mt19937`](https://www.npmjs.org/package/mt19937) *(Native)*
 * [`uupaa.random.js`](https://www.npmjs.org/package/uupaa.random.js)
