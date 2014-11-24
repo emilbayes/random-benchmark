@@ -13,7 +13,7 @@ module.exports = function(iters, cb) {
       sum += mersenne.rand(9007199254740992)/9007199254740992;
    }
 
-   if (sum < 0 || sum > iters) {
+   if(sum < 0 || sum > iters) {
       return cb(new Error('bad sum'));
    }
 
