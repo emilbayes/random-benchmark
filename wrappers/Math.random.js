@@ -2,7 +2,8 @@
 module.exports = function(iters, cb) {
    var sum = 0,
        n = iters;
-   while(--n) {
+
+   while(n--) {
       sum += Math.random();
    }
 
