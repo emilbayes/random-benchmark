@@ -23,9 +23,9 @@
   },
   "optionalDependencies": {
     "alea": "0.0.9",
-    "mersenne": "latest",
-    "mt19937": "latest",
-    "uupaa.random.js": "latest",
-    "xorshift": "latest"
+    "mersenne": "0.0.3",
+    "mt19937": "0.0.4",
+    "uupaa.random.js": "0.1.1",
+    "xorshift": "0.2.0"
   }
 }
