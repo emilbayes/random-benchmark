@@ -8,7 +8,7 @@ module.exports = function(iters, cb) {
        n = iters;
 
    while(n--) {
-      sum += r.value(); //2^53
+      sum += r.next()/9007199254740992; //2^53
    }
 
    if(sum < 0 || sum > iters) {
