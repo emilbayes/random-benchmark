@@ -19,7 +19,12 @@ async.eachSeries(wrappers, function(wrapper, done) {
     console.log('Benchmarking: %s', wrapper.name);
     runner.send(wrapper);
     runner.on('message', function(stats) {
-        console.log('%s ns/op ± %s\n', stats.opMean.toPrecision(6), stats.opSd.toPrecision(6));
+        var statsDisplay = {
+           mean: stats.opMean === null ? '-' : stats.opMean.toPrecision(6),
+           sd: stats.opSd === null ? '-' : stats.opSd.toPrecision(6)
+        };
+
+        console.log('%s ns/op ± %s\n', statsDisplay.mean, statsDisplay.sd);
         done();
     });
 });

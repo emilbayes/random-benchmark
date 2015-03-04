@@ -11,20 +11,30 @@ process.on('message', function(job) {
       width: 50
    });
 
-   var wrapper = require(job.wrapper);
-   var benchmark = new Benchmark(wrapper);
+   try {
+      var wrapper = require(job.wrapper);
+      var benchmark = new Benchmark(wrapper);
 
-   benchmark.on('progress', function() {
-      bar.tick();
-   });
-
-   benchmark.once('finished', function(stats) {
-      process.send({
-         opMean: stats.mean() / Benchmark.ITERATIONS_PER_SAMPLE,
-         opSd: stats.sd() / Math.sqrt(Benchmark.ITERATIONS_PER_SAMPLE)
+      benchmark.on('progress', function() {
+         bar.tick();
       });
-      process.exit(0);
-   });
 
-   benchmark.run();
+      benchmark.once('finished', function(stats) {
+         process.send({
+            opMean: stats.mean() / Benchmark.ITERATIONS_PER_SAMPLE,
+            opSd: stats.sd() / Math.sqrt(Benchmark.ITERATIONS_PER_SAMPLE)
+         });
+         process.exit(0);
+      });
+
+      benchmark.run();
+   }
+   catch(ex) {
+      process.send({
+         opMean: NaN,
+         opSd: NaN,
+         error: ex
+      });
+      process.exit(1);
+   }
 });

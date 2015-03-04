@@ -21,7 +21,7 @@
     "progress": "^1.1.8",
     "summary": "^0.3.1"
   },
-  "devDependencies": {
+  "optionalDependencies": {
     "alea": "0.0.9",
     "mersenne": "latest",
     "mt19937": "latest",
