@@ -1,6 +1,6 @@
 {
   "name": "random-benchmark",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Benchmark of pseudorandom number generators",
   "main": "index.js",
   "bin": "./index.js",
