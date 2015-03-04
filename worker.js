@@ -21,6 +21,8 @@ process.on('message', function(job) {
 
       benchmark.once('finished', function(stats) {
          process.send({
+            timeSum: stats.sum(),
+            opSum: stats.size() * Benchmark.ITERATIONS_PER_SAMPLE,
             opMean: stats.mean() / Benchmark.ITERATIONS_PER_SAMPLE,
             opSd: stats.sd() / Math.sqrt(Benchmark.ITERATIONS_PER_SAMPLE)
          });
@@ -31,6 +33,8 @@ process.on('message', function(job) {
    }
    catch(ex) {
       process.send({
+         timeSum: NaN,
+         opSum: 0,
          opMean: NaN,
          opSd: NaN,
          error: ex

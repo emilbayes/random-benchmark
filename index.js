@@ -20,11 +20,14 @@ async.eachSeries(wrappers, function(wrapper, done) {
     runner.send(wrapper);
     runner.on('message', function(stats) {
         var statsDisplay = {
+           timeSum: stats.sum === null ? '-' : (stats.timeSum / 1e9).toPrecision(4),
+           opSum: stats.opSum === null ? '0' : stats.opSum.toExponential(),
            mean: stats.opMean === null ? '-' : stats.opMean.toPrecision(6),
            sd: stats.opSd === null ? '-' : stats.opSd.toPrecision(6)
         };
 
-        console.log('%s ns/op ± %s\n', statsDisplay.mean, statsDisplay.sd);
+        console.log('%s ns/op ± %s', statsDisplay.mean, statsDisplay.sd);
+        console.log('(%s ops in %ss)\n', statsDisplay.opSum, statsDisplay.timeSum);
         done();
     });
 });
