@@ -4,9 +4,7 @@ node_js:
 - '0.10'
 - '0.11'
 - '0.12'
-- 'iojs-v1.0'
-- 'iojs-v1.1'
-- 'iojs-v1.2'
+- 'iojs'
 before_install: npm install -g npm
 deploy:
   provider: npm
